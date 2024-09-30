@@ -9,10 +9,13 @@
 Example with gpiozero for `Raspberry Pi 5`:
 
 ```python
+from time import sleep
 from gpiozero import Robot, Motor, OutputDevice
 
 robot = Robot(left=Motor(5, 6), right=Motor(13, 19))
 device = OutputDevice(26)
+
+device.on() # .off()
 
 for i in range(5):
     robot.forward()
